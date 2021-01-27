@@ -1,0 +1,35 @@
+<!--
+ - Created by Sergey on 26.10.2020.
+ -->
+
+<!-- Completed Task List -->
+<template>
+
+    <lightning-card title="Completed Tasks" icon-name="custom:custom57">
+
+            <div class="custom-box slds-combobox slds-p-around_medium slds-text-align_left">
+                <lightning-combobox
+                    class=slds-theme_default
+                    name="progress"
+                    label=""
+                    value={value}
+                    placeholder="Select Filter"
+                    options={options}
+                    onchange={handleCompletedCategoryChange}>
+                </lightning-combobox>
+            </div>
+
+        <br>
+        <div class="slds-var-m-around_medium">
+            <template for:each={todoTasks} for:item="task">
+                <c-completed-task ondeletetask= {handleDeleteNotification} onviewcompletedtask={handleCompletedClickView}
+                    class="slds-show slds-is-relative"
+                    key={task.recordId}
+                    task={task}>
+
+                </c-completed-task>
+            </template>
+        </div>
+    </lightning-card>
+<c-subtask></c-subtask>
+</template>

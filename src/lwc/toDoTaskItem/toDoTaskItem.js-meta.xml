@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>To Do Task Item</description>
+    <isExposed>true</isExposed>
+    <masterLabel>To Do Task Item</masterLabel>
+
+</LightningComponentBundle>

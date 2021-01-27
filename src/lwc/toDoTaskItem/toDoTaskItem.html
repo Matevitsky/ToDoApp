@@ -1,0 +1,60 @@
+<!--
+ - Created by Sergey on 27.10.2020.
+ -->
+
+<!-- To Do Task Item -->
+<template>
+
+    <template if:true={task}>
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-small">
+                <div class="custom-box slds-box slds-p-around_medium slds-text-align_left">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_4-of-5">
+                            <span>
+                                <lightning-record-form
+                                    record-id={task.recordId}
+                                    object-api-name={objectApiName}
+                                    fields={fields}
+                                    columns="2"
+                                    mode="view"
+                                   >
+                                </lightning-record-form>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-5">
+                            <span>
+                                  <lightning-button-icon icon-name="standard:task2"
+                                                         name={task.recordId}
+                                                         class="slds-m-left_x-small buttonDone"
+                                                         onclick={clickButtonComplete}>
+
+                                </lightning-button-icon>
+                                <lightning-button-icon class=icon-view
+                                                       name={task.recordId}
+                                                       icon-name="action:preview"
+                                                       onclick={clickButtonView}
+                                                       title="View">
+                                </lightning-button-icon>
+                    <lightning-button-icon
+                        alternative-text="Delete"
+                        class=button-delete
+                        icon-name="action:close"
+                        name={task.recordId}
+                        onclick={clickButtonDelete}
+                        size=medium
+                        title="Delete">
+                    </lightning-button-icon>
+
+
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </lightning-layout-item>
+
+
+        </lightning-layout>
+    </template>
+</template>

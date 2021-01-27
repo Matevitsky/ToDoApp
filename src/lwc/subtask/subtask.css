@@ -1,0 +1,47 @@
+/**
+ * Created by MKA on 21.10.2020.
+ */
+.main-block {
+    display: inline;
+    width: 50%;
+    height: 100%;
+}
+
+.main-block-subtasks {
+    margin-top: 4%;
+    display: inline;
+    width: 50%;
+    height: 100%;
+}
+
+.left-block {
+    width: 80%;
+    float: left;
+}
+
+.left-block-task {
+    width: 80%;
+    float: left;
+    color: darkblue;
+}
+
+.left-block-subtask {
+    width: 100%;
+    float: left;
+    color: darkblue;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+.right-block-add {
+    float: right;
+    width: 10%;
+}
+
+.right-block {
+    width: 7%;
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+}

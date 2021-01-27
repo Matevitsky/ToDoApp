@@ -1,0 +1,62 @@
+/**
+ * Created by Sergey on 26.10.2020.
+ */
+li {
+    border-radius: 10px;
+}
+
+.slds-card {
+    background-color: #a6e5ae;
+}
+
+.main-block {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: lightcyan;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.main-block2 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.checkbox {
+    width: 5%;
+    float: left;
+    margin-right: 2px;
+    margin-top: 3%;
+}
+
+.left-block {
+    width: 65%;
+    float: left;
+    color: darkblue;
+    font-weight: bold;
+}
+
+.right-block {
+    width: 30%;
+    display: inline;
+    height: 100%;
+    padding-top: 3%;
+    float: right;
+}
+
+.buttonDone {
+    margin-right: 7px;
+}
+
+.button-delete {
+    margin-left: 8px;
+
+}

@@ -1,0 +1,36 @@
+<!--
+ - Created by MKA on 18.10.2020.
+ -->
+
+<template>
+    <lightning-card title="">
+
+        <div class="custom-box slds-combobox slds-p-around_medium slds-text-align_left">
+            <lightning-combobox
+                class=slds-theme_default
+                name="progress"
+                label=""
+                value={value}
+                placeholder="Select Filter"
+                options={options}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+
+        <br>
+        <div class="slds-var-m-around_medium">
+            <template for:each={todoTasks} for:item="task">
+
+                <c-to-do-task-item oncompletetask={handleCompleteTask} onviewtask={handleClickView} ondeletetask={handleDeleteTask}
+                                  class="slds-show slds-is-relative"
+                                  key={task.recordId}
+                                  task={task}>
+
+                </c-to-do-task-item>
+
+
+            </template>
+        </div>
+    </lightning-card>
+    <c-subtask></c-subtask>
+</template>

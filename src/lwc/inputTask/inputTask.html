@@ -1,0 +1,58 @@
+<!--
+ - Created by Sergey on 27.10.2020.
+ -->
+
+<!-- Input Task -->
+
+<template>
+
+    <lightning-card title="Tasks" icon-name="custom:custom57">
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <span>
+                <div class="slds-grid slds-grid_vertical">
+             <div class="slds-col">
+                 <span>
+         <lightning-input
+             label="Task"
+             onchange={handleSubjectChange}
+             required>
+         </lightning-input>
+                 </span>
+             </div>
+                    <div class="slds-col">
+                        <span>
+                            <lightning-combobox
+                                class=""
+                                name="progress"
+                                label="Category"
+                                value={value}
+                                placeholder="Select Filter"
+                                options={options}
+                                onchange={handleCategoryChange}
+                            required>
+                            </lightning-combobox>
+                        </span>
+                    </div>
+                </div>
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <span>
+                    <div class="slds-p-top_xx-large">
+                        <a href="javascript:void(0);" class="slds-has-blur-focus">
+                    <lightning-button-icon class="" icon-name="utility:add"
+                                           alternative-text="Add Row" size="xx_large" title="Add Row"
+                                           onclick={handleSave}>
+                    </lightning-button-icon>
+                        </a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <c-todo-task-view onrefreshcompletedlist={refreshCompletedList} class="slds-show slds-is-relative">
+        </c-todo-task-view>
+    </lightning-card>
+
+</template>

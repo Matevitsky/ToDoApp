@@ -1,0 +1,42 @@
+<!--
+ - Created by MKA on 20.10.2020.
+ -->
+
+<!-- Edit Form -->
+<template>
+    <template if:true={edit}>
+        <section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 class="slds-modal slds-fade-in-open slds-modal_medium"
+                 role="dialog"
+                 tabindex="-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <!-- if:true={showModel}-->
+                    <lightning-button-icon alternative-text="close"
+                                           class="slds-float_right"
+                                           icon-name="utility:close"
+                                           onclick={closeEditForm}></lightning-button-icon>
+                </header>
+                <!--                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">-->
+                <!--                    <lightning-layout>-->
+                <!--                        <lightning-layout-item size="12" padding="around-small">-->
+                <!--                            <lightning-card title="">rgre-->
+                <!--                                <lightning-record-edit-form-->
+                <!--                                        record-id={todoTask.recordId}-->
+                <!--                                        object-api-name="TodoTask__c">-->
+                <!--                                    <lightning-input-field field-name="Name"></lightning-input-field>-->
+                <!--                                    <lightning-input-field field-name="DateTime__c"></lightning-input-field>-->
+                <!--                                    <div class="slds-m-top_medium">-->
+                <!--                                        <lightning-button class="slds-m-top_small" label="Cancel" onclick={allowReset}></lightning-button>-->
+                <!--                                        <lightning-button class="slds-m-top_small" onclick = {refreshTodoList}  type="submit" label="Save Record" ></lightning-button>-->
+                <!--                                    </div>-->
+                <!--                                </lightning-record-edit-form>-->
+                <!--                            </lightning-card>-->
+                <!--                        </lightning-layout-item>-->
+                <!--                    </lightning-layout>-->
+                <!--                </div>-->
+            </div>
+
+        </section>
+    </template>
+</template>

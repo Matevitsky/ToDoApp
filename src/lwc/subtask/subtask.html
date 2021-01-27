@@ -1,0 +1,93 @@
+<!--
+ - Created by MKA on 19.10.2020.
+ -->
+
+<!-- Subtask -->
+<template>
+    <template if:true={subtaskModal}>
+
+        <section class="slds-modal slds-fade-in-open slds-modal_small" tabindex="-1">
+
+            <div class="slds-modal__container">
+                <lightning-card class="slds-box slds-box_small slds-theme_default">
+
+                    <div>
+                        <lightning-button-icon alternative-text="close"
+                                               class="slds-float_right"
+                                               icon-name="utility:close"
+                                               onclick={closeSubtaskWindow}
+                                               variant="border-filled">
+                        </lightning-button-icon>
+                        <br/>
+                    </div>
+                    <div>
+                        <template if:true={processing}>
+                            <lightning-spinner alternative-text="Loading"
+                                               size="medium"
+                                               variant=inverse>
+                            </lightning-spinner>
+                        </template>
+
+                        <ul class="slds-has-dividers_around-space">
+                            <!-- Add new subtask-->
+                            <li>
+                                <div class=main-block>
+                                    <div class=left-block>
+                                        <lightning-input
+                                            autocomplete="off"
+                                            label="New Subtask"
+                                            onchange={updateSubtask}
+                                            placeholder="Enter subtask"
+                                            required
+                                            type="text"
+                                            value={newSubtaskName}
+                                            variant="label-hidden">
+                                        </lightning-input>
+                                        <br/>
+                                    </div>
+
+                                    <!-- Button to add New Subtask to the List -->
+                                    <div class=right-block-add>
+                                        <lightning-button
+                                            label="Add"
+                                            onclick={addSubtaskToList}
+                                            variant="brand">
+                                        </lightning-button>
+                                    </div>
+                                </div>
+                            </li>
+                            <br/>
+                            <!--                                     </div>-->
+                            <template for:each={subtasks} for:item="subtask">
+                                <li class="slds-has-dividers_around-space" key={subtask.id}>
+                                    <div class=main-block-subtasks>
+                                        <div class=left-block-task>
+                                            <lightning-record-form columns=1
+                                                                   class=left-block-subtask
+                                                                   fields={arrayFields}
+                                                                   key={subtask.recordId}
+                                                                   mode="view"
+                                                                   object-api-name="Subtask__c"
+                                                                   record-id={subtask.recordId}>
+                                            </lightning-record-form>
+                                            <br/><br/>
+                                        </div>
+                                        <div class="right-block">
+                                            <lightning-button-icon
+                                                icon-name="utility:delete"
+                                                alternative-text="Delete"
+                                                onclick={deleteSubtask}
+                                                name={subtask.id}
+                                                title="Delete">
+                                            </lightning-button-icon>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </lightning-card>
+            </div>
+        </section>
+    </template>
+</template>
